@@ -10,3 +10,7 @@ export const setUsers = function (key, item) {
   const stringItem = JSON.stringify(item);
   localStorage.setItem(key, stringItem);
 };
+
+export const formmat = () => {
+  return 1;
+};
