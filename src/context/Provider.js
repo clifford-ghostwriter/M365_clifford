@@ -9,7 +9,7 @@ const iniitialstate = {
 };
 
 export const Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, iniitialstate);
+  const [state] = useReducer(reducer, iniitialstate);
 
   //   console.log(state);
 

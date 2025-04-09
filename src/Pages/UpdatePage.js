@@ -23,9 +23,9 @@ const UpdatePage = () => {
   const onChange = function (e) {
     const name = e.target.name;
     // const value = e.target.value === "on" ? true : false;
-    const value = e.target.value;
+    const value = !e.target.value;
 
-    console.log(name, value);
+    console.log(e.target, value);
 
     setUserTasks((userTasks) => {
       return { ...userTasks, [name]: value };
@@ -82,7 +82,7 @@ const UpdatePage = () => {
             type="checkbox"
             id="SignNDA"
             name="SignNDA"
-            value={userTasks.SignNDA}
+            // value={}
             onChange={onChange}
           />
         </div>
