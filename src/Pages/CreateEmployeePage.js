@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { users } from "../Utils/Users";
+// import { users } from "../Utils/Users";
+import { Context } from "../context/Provider";
 
 const CreateEmployeePage = () => {
+  const { users } = Context();
   const [user, createUser] = useState({
     name: "",
     email: "",
@@ -36,6 +38,9 @@ const CreateEmployeePage = () => {
       },
     });
 
+    // const stringUsers = JSON.stringify(users);
+    localStorage.setItem("users", users);
+
     await new Promise((resolve) => {
       setTimeout(resolve, 2000);
     });
@@ -54,25 +59,34 @@ const CreateEmployeePage = () => {
     <Wrapper>
       <form action="" className="form">
         <label htmlFor="name">name</label>
-        <input type="text" name="name" value={user.name} onChange={onChange} />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={user.name}
+          onChange={onChange}
+        />
         <label htmlFor="email">email</label>
         <input
           type="text"
           name="email"
+          id="email"
           value={user.email}
           onChange={onChange}
         />
         <label htmlFor="department">department</label>
         <input
           type="text"
+          id="department"
           name="department"
           value={user.department}
           onChange={onChange}
         />
-        <label htmlFor="department">department</label>
+        <label htmlFor="startDate">startDate</label>
         <input
           type="text"
           name="startDate"
+          id="startDate"
           value={user.startDate}
           onChange={onChange}
         />

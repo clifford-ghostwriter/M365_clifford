@@ -1,9 +1,16 @@
-import React from "react";
-import { users } from "../Utils/Users";
+import React, { useEffect } from "react";
+// import { users } from "../Utils/Users";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Context } from "../context/Provider";
 
 const Employee = () => {
+  // const [users, setUsers] = useState();
+
+  const { users } = Context();
+
+  console.log(users);
+
   const checkStatus = function (user) {
     const tasks = [];
     let taskStatus = "";
@@ -24,6 +31,11 @@ const Employee = () => {
     }
     return taskStatus;
   };
+
+  useEffect(() => {
+    // const users = localStorage.getItem("users");
+    // console.log(users);
+  });
 
   return (
     <Wrapper>
