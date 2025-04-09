@@ -1,3 +1,5 @@
 import CreateEmployeePage from "./CreateEmployeePage";
+import Employee from "./Employee";
+import SharedLayout from "./SharedLayout";
 
-export { CreateEmployeePage };
+export { CreateEmployeePage, SharedLayout, Employee };

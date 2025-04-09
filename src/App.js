@@ -1,13 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { CreateEmployeePage } from "./Pages";
+import { CreateEmployeePage, Employee, SharedLayout } from "./Pages";
 
 function App() {
   return (
     <BrowserRouter>
-      <p>hello</p>
       <Routes>
-        <Route path="/" element={<CreateEmployeePage />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<CreateEmployeePage />} />
+          <Route path="/employees" element={<Employee />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
