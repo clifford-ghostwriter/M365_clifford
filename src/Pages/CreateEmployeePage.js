@@ -59,6 +59,7 @@ const CreateEmployeePage = () => {
 
   return (
     <Wrapper>
+      <p>Create Employee </p>
       <form action="" className="form">
         <label htmlFor="name">name</label>
         <input
@@ -67,6 +68,7 @@ const CreateEmployeePage = () => {
           id="name"
           value={user.name}
           onChange={onChange}
+          required={true}
         />
         <label htmlFor="email">email</label>
         <input
@@ -75,6 +77,7 @@ const CreateEmployeePage = () => {
           id="email"
           value={user.email}
           onChange={onChange}
+          required={true}
         />
         <label htmlFor="department">department</label>
         <input
@@ -83,6 +86,7 @@ const CreateEmployeePage = () => {
           name="department"
           value={user.department}
           onChange={onChange}
+          required={true}
         />
         <label htmlFor="startDate">startDate</label>
         <input
@@ -91,6 +95,7 @@ const CreateEmployeePage = () => {
           id="startDate"
           value={user.startDate}
           onChange={onChange}
+          required={true}
         />
 
         <button type="submit" onClick={onsSubmit}>
@@ -104,22 +109,29 @@ const CreateEmployeePage = () => {
 const Wrapper = styled.div`
   /* background-color: black; */
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  padding-top: 1rem;
   height: 100%;
+  flex-direction: column;
 
   .form {
     width: 50%;
     /* margin-inline: auto; */
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* height: 200px; */
+    gap: 1rem;
+  }
+
+  label {
+    text-transform: capitalize;
   }
 
   input,
   button {
-    height: 56px;
+    height: 36px;
   }
 `;
 export default CreateEmployeePage;

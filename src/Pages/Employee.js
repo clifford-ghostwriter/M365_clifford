@@ -39,6 +39,7 @@ const Employee = () => {
 
   return (
     <Wrapper>
+      <p>list of employees</p>
       <table className="table">
         <thead>
           <tr>
@@ -68,7 +69,7 @@ const Employee = () => {
                   {status}
                 </td>
                 <td>
-                  <Link to={`/update/${index}`}>update employee</Link>
+                  <Link to={`/update/${index}`}>Update Employee</Link>
                 </td>
               </tr>
             );
@@ -83,8 +84,12 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* height: 100%; */
+  flex-direction: column;
+
+  padding-top: 2rem;
   .table {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 80%;
   }
 
@@ -92,7 +97,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     /* width: 80%; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
   .completed {
@@ -111,6 +116,12 @@ const Wrapper = styled.div`
     text-transform: capitalize;
     color: black;
     text-decoration: none;
+  }
+  th,
+  td {
+    text-align: left;
+    border: 1px solid red;
+    width: 100%;
   }
 `;
 export default Employee;
