@@ -9,7 +9,7 @@ const Employee = () => {
 
   const { users } = Context();
 
-  console.log(users);
+  console.log(typeof users);
 
   const checkStatus = function (user) {
     const tasks = [];

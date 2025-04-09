@@ -3,5 +3,10 @@ export const getUsers = function (key) {
 
   //   console.log(users);
 
-  return users;
+  return JSON.parse(users);
+};
+
+export const setUsers = function (key, item) {
+  const stringItem = JSON.stringify(item);
+  localStorage.setItem(key, stringItem);
 };

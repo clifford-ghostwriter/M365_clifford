@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 // import { users } from "../Utils/Users";
 import { Context } from "../context/Provider";
+import { setUsers } from "../Utils/localstorage";
 
 const CreateEmployeePage = () => {
   const { users } = Context();
@@ -39,7 +40,8 @@ const CreateEmployeePage = () => {
     });
 
     // const stringUsers = JSON.stringify(users);
-    localStorage.setItem("users", users);
+    // localStorage.setItem();
+    setUsers("users", users);
 
     await new Promise((resolve) => {
       setTimeout(resolve, 2000);
