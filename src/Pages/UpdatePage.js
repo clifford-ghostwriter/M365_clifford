@@ -5,27 +5,25 @@ import styled from "styled-components";
 import { setUsers } from "../Utils/localstorage";
 
 const UpdatePage = () => {
-  const [userTasks, setUserTasks] = useState({
-    SignNDA: false,
-    submitId: false,
-    setUpEmail: false,
-    HrOrientation: false,
-    companyTools: false,
-    meetingWithManager: false,
-  });
   const { userid } = useParams();
   const { users } = Context();
   const user = users[userid];
   const [loading, setLoading] = useState(false);
+
+  console.log(user.tasks);
+
+  const [userTasks, setUserTasks] = useState({
+    ...user.tasks,
+  });
 
   const navigate = useNavigate();
 
   const onChange = function (e) {
     const name = e.target.name;
     // const value = e.target.value === "on" ? true : false;
-    const value = !e.target.value;
+    const value = e.target.checked;
 
-    console.log(e.target, value);
+    // console.log(name, value);
 
     setUserTasks((userTasks) => {
       return { ...userTasks, [name]: value };
@@ -82,7 +80,7 @@ const UpdatePage = () => {
             type="checkbox"
             id="SignNDA"
             name="SignNDA"
-            // value={}
+            checked={userTasks.SignNDA}
             onChange={onChange}
           />
         </div>
@@ -92,7 +90,7 @@ const UpdatePage = () => {
             type="checkbox"
             id="submitId"
             name="submitId"
-            value={userTasks.submitId}
+            checked={userTasks.submitId}
             onChange={onChange}
           />
         </div>
@@ -102,7 +100,7 @@ const UpdatePage = () => {
             type="checkbox"
             id="setUpEmail"
             name="setUpEmail"
-            value={userTasks.setUpEmail}
+            checked={userTasks.setUpEmail}
             onChange={onChange}
           />
         </div>
@@ -112,7 +110,7 @@ const UpdatePage = () => {
             type="checkbox"
             id="HrOrientation"
             name="HrOrientation"
-            value={userTasks.HrOrientation}
+            checked={userTasks.HrOrientation}
             onChange={onChange}
           />
         </div>
@@ -122,7 +120,7 @@ const UpdatePage = () => {
             type="checkbox"
             id="companyTools"
             name="companyTools"
-            value={userTasks.companyTools}
+            checked={userTasks.companyTools}
             onChange={onChange}
           />
         </div>
@@ -132,7 +130,7 @@ const UpdatePage = () => {
             type="checkbox"
             id="meetingWithManager"
             name="meetingWithManager"
-            value={userTasks.meetingWithManager}
+            checked={userTasks.meetingWithManager}
             onChange={onChange}
           />
         </div>

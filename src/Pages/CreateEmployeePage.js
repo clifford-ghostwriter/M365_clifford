@@ -90,7 +90,7 @@ const CreateEmployeePage = () => {
         />
         <label htmlFor="startDate">startDate</label>
         <input
-          type="text"
+          type="date"
           name="startDate"
           id="startDate"
           value={user.startDate}

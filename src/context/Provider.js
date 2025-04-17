@@ -5,7 +5,7 @@ import { getUsers } from "../Utils/localstorage";
 const appContext = React.createContext();
 
 const iniitialstate = {
-  users: getUsers("users"),
+  users: getUsers("users") || [],
 };
 
 export const Provider = ({ children }) => {
